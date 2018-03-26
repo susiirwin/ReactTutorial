@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/node /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/yarn dev
+  /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/node /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/yarn test:update
 
 PATH: 
-  /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin:/usr/local/sbin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0/bin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0@global/bin:/Users/susi.irwin/.rvm/rubies/ruby-2.4.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/susi.irwin/.rvm/bin
+  /usr/local/sbin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0/bin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0@global/bin:/Users/susi.irwin/.rvm/rubies/ruby-2.4.0/bin:/Users/susi.irwin/.nvm/versions/node/v9.8.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/susi.irwin/.rvm/bin
 
 Yarn version: 
   1.5.1
@@ -18,10 +18,15 @@ npm manifest:
     "scripts": {
       "api": "node ratingsAPI.js",
       "build": "webpack",
-      "dev": "webpack-dev-servber",
+      "dev": "webpack-dev-server",
       "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
       "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+      "test": "jest",
+      "test:update": "jest -u",
       "watch": "webpack --watch"
+    },
+    "jest": {
+      "snapshotSerializers": ["jest-serializer-enzyme"]
     },
     "dependencies": {
       "axios": "0.16.1",
@@ -7140,9 +7145,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 127
+  Exit code: 1
   Command: sh
-  Arguments: -c webpack-dev-servber
+  Arguments: -c jest -u
   Directory: /Users/susi.irwin/Desktop/Learning/complete-intro-to-react
   Output:
   
