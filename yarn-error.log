@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/node /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/yarn lint
+  /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/node /Users/susi.irwin/.nvm/versions/node/v9.8.0/bin/yarn test
 
 PATH: 
   /usr/local/sbin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0/bin:/Users/susi.irwin/.rvm/gems/ruby-2.4.0@global/bin:/Users/susi.irwin/.rvm/rubies/ruby-2.4.0/bin:/Users/susi.irwin/.nvm/versions/node/v9.8.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Users/susi.irwin/.rvm/bin
@@ -7165,7 +7165,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c eslint "**/*.{js,jsx}" --quiet
+  Arguments: -c jest
   Directory: /Users/susi.irwin/Desktop/Learning/complete-intro-to-react
   Output:
   

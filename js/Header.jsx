@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { searchTerm } from './actionCreators';
 
-const Header = (props: { showSearch?: boolean, handleSearchTermChange?: Function, searchTerm?: string }) => {
+const Header = (props: { showSearch: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
   let utilSpace;
   if (props.showSearch) {
     utilSpace = (
@@ -27,9 +29,9 @@ const Header = (props: { showSearch?: boolean, handleSearchTermChange?: Function
 };
 
 Header.defaultProps = {
-  showSearch: false,
-  handleSearchTermChange: function noop() {},
-  searchTerm: ''
+  showSearch: false
 };
+
+const mapStateToProps = state => ({ searchTerm: state.searchTerm });
 
 export default Header;
