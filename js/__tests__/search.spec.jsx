@@ -18,7 +18,16 @@ test('Search should render correct amount of shows', () => {
   expect(component.find(ShowCard).length).toEqual(preload.shows.length);
 });
 
-test('Search should render correct ammount of shows based on search term', () => {
+test('Search should render correct ammount of shows based on search term - without Redux', () => {
+  const searchWord = 'black';
+  const component = shallow(<UnwrappedSearch shows={preload.shows} searchTerm={searchWord} />);
+  const showCount = preload.shows.filter(
+    show => `${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >= 0
+  ).length;
+  expect(component.find(ShowCard).length).toEqual(showCount);
+});
+
+test('Search should render correct ammount of shows based on search term - with Redux', () => {
   const searchWord = 'black';
   store.dispatch(setSearchTerm(searchWord));
   const component = render(
