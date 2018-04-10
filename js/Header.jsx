@@ -3,9 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { searchTerm } from './actionCreators';
+import { setSearchTerm } from './actionCreators';
 
-const Header = (props: { showSearch: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
+const Header = (props: { showSearch?: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
   let utilSpace;
   if (props.showSearch) {
     utilSpace = (
@@ -33,5 +33,10 @@ Header.defaultProps = {
 };
 
 const mapStateToProps = state => ({ searchTerm: state.searchTerm });
+const mapDispatchToProps = (dispatch: Function) => ({
+  handleSearchTermChange(event) {
+    dispatch(setSearchTerm(event.target.value));
+  }
+});
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
